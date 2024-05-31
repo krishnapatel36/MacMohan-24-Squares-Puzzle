@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html>
+
+<head>
+    <title>McMahon's 24 Color Squares in JavaScript</title>
+    <script src="./canvashelper.js"></script>
+    <script src="./squares24.js"></script>
+</head>
+
+<body>
+    <div style="text-align:center">
+        <!-- write Center for creative learning CCL IITGN in left corner -->
+        <div>
+            <h1 style="text-align: center;color: brown;font-size: 30px;">Center For Creative Learning</h1>
+            <h1 style="text-align: center;color: brown;font-size: 30px;">IITGN</h1>
+        </div>
+        <h1>McMahon's 24 Color Squares</h1>
+        <div>Drag squares to swap them, click to rotate.<br />
+            Goal is to make all the border "triangles" of
+            the same color,<br />while pairs of inner "triangles" should match when they touch the same edge.</div>
+        <br />
+        <span style="font-weight:bold" id="matches"></span>
+        <br />
+        <canvas id="demo" width="600" height="400"
+            style="border:5px solid #888;border-radius: 5px;background: black;"></canvas>
+        <br />
+        <input type="button" onclick="squares.shuffleAndDraw()" value="Shuffle" />
+        <input type="button" id="solve" value="View Solutions" />
+    </div>
+
+    <script>
+        window.onload = function () {
+            document.getElementById('solve').addEventListener('click', function () {
+                window.location.href = 'sol.html';  // Replace 'anotherPage.html' with the URL of the page you want to open 
+            });
+            function info(score) {
+                if (score == 58) {
+                    alert('Congratulations!\n\nYou have found one solutions :)');
+                }
+            }
+            squares = new Squares24({ size: 120, infoCallback: info });
+        }
+    </script>
+
+</body>
