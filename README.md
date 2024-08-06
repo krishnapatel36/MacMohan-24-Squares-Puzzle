@@ -1,4 +1,3 @@
-Here’s a draft README for your `MacMohan-24-Squares-Puzzle` project:
 
 ---
 
